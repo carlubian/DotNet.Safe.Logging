@@ -1,0 +1,182 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DotNet.Safe.Logging</name>
+    </assembly>
+    <members>
+        <member name="T:DotNet.Safe.Logging.ConsoleLog">
+            <summary>
+            Writes logs to the console.
+            </summary>
+        </member>
+        <member name="M:DotNet.Safe.Logging.ConsoleLog.#ctor(DotNet.Safe.Logging.Severity)">
+            <summary>
+            Create a log to the console with a severity level.
+            </summary>
+            <param name="s">Severity level</param>
+        </member>
+        <member name="M:DotNet.Safe.Logging.ConsoleLog.Print(System.String,DotNet.Safe.Logging.Severity)">
+            <summary>
+            Writes log messages to the console.
+            </summary>
+            <param name="text">Message content</param>
+            <param name="severity">Message severity</param>
+        </member>
+        <member name="T:DotNet.Safe.Logging.Extension">
+            <summary>
+            Exposes an extensio method to attach a logger to a composition.
+            </summary>
+        </member>
+        <member name="M:DotNet.Safe.Logging.Extension.UseLogging``1(DotNet.Safe.Standard.Exceptions.Composition{``0},DotNet.Safe.Logging.Log)">
+            <summary>
+            Attaches a logging module from DotNet.Safe.Logging to this composition.
+            </summary>
+            <typeparam name="TCurrent">Composition type</typeparam>
+            <param name="source">Composition</param>
+            <param name="log">Logging module</param>
+            <returns>In-progress composition</returns>
+        </member>
+        <member name="T:DotNet.Safe.Logging.FileLog">
+            <summary>
+            Write logs to a file.
+            </summary>
+        </member>
+        <member name="M:DotNet.Safe.Logging.FileLog.#ctor(System.String,DotNet.Safe.Logging.Severity)">
+            <summary>
+            Create a log to the specified file with a severity level.
+            </summary>
+            <param name="uri">Path to the file</param>
+            <param name="s">Severity level</param>
+        </member>
+        <member name="M:DotNet.Safe.Logging.FileLog.Print(System.String,DotNet.Safe.Logging.Severity)">
+            <summary>
+            Writes log messages to the file.
+            </summary>
+            <param name="text">Message content</param>
+            <param name="severity">Message severity</param>
+        </member>
+        <member name="T:DotNet.Safe.Logging.Log">
+            <summary>
+            Logs events to various sources.
+            </summary>
+        </member>
+        <member name="M:DotNet.Safe.Logging.Log.ToConsole(DotNet.Safe.Logging.Severity)">
+            <summary>
+            Write the output to the system console.
+            </summary>
+            <param name="s">Logging granularity</param>
+            <returns>Console logger</returns>
+        </member>
+        <member name="M:DotNet.Safe.Logging.Log.ToFile(System.String,DotNet.Safe.Logging.Severity)">
+            <summary>
+            Write the output to a file.
+            </summary>
+            <param name="uri">Filename, including path</param>
+            <param name="s">Logging granularity</param>
+            <returns></returns>
+        </member>
+        <member name="M:DotNet.Safe.Logging.Log.Print(System.String,DotNet.Safe.Logging.Severity)">
+            <summary>
+            Concrete classes must override this method to write
+            the logging messages to their intended destination.
+            </summary>
+            <param name="text">Message to be logged</param>
+            <param name="severity">Severity of the message</param>
+        </member>
+        <member name="M:DotNet.Safe.Logging.Log.OnCompositionStarted(System.Object,DotNet.Safe.Standard.Events.CompositionStatus)">
+            <summary>
+            The composition has started.
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:DotNet.Safe.Logging.Log.OnCompositionFinished(System.Object,DotNet.Safe.Standard.Events.CompositionStatus)">
+            <summary>
+            The composition has finished.
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:DotNet.Safe.Logging.Log.OnStepBeginInvocation(System.Object,DotNet.Safe.Standard.Events.CompositionStep)">
+            <summary>
+            A step begins invocation.
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:DotNet.Safe.Logging.Log.OnStepEndInvocation(System.Object,DotNet.Safe.Standard.Events.CompositionStep)">
+            <summary>
+            A step ends invocation.
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:DotNet.Safe.Logging.Log.OnStepIgnored(System.Object,DotNet.Safe.Standard.Events.CompositionStep)">
+            <summary>
+            A step is ignored because of a failing composition.
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:DotNet.Safe.Logging.Log.OnStepFailure(System.Object,DotNet.Safe.Standard.Events.CompositionError)">
+            <summary>
+            A step fails during execution.
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:DotNet.Safe.Logging.Log.OnOtherwiseBeginInvocation(System.Object,DotNet.Safe.Standard.Events.OtherwiseStep)">
+            <summary>
+            An otherwise begins invocation.
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:DotNet.Safe.Logging.Log.OnOtherwiseEndInvocation(System.Object,DotNet.Safe.Standard.Events.OtherwiseStep)">
+            <summary>
+            An otherwise ends invocation.
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:DotNet.Safe.Logging.Log.OnOtherwiseIgnored(System.Object,DotNet.Safe.Standard.Events.OtherwiseStep)">
+            <summary>
+            An otherwise is ignored bacuse of a successful composition.
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:DotNet.Safe.Logging.Log.OnOtherwiseFailure(System.Object,DotNet.Safe.Standard.Events.CompositionError)">
+            <summary>
+            An otherwise fails during execution.
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="T:DotNet.Safe.Logging.Severity">
+            <summary>
+            Configures the granularity of logging.
+            </summary>
+        </member>
+        <member name="F:DotNet.Safe.Logging.Severity.Error">
+            <summary>
+            Only log errors.
+            </summary>
+        </member>
+        <member name="F:DotNet.Safe.Logging.Severity.Warning">
+            <summary>
+            Log errors and warnigns.
+            </summary>
+        </member>
+        <member name="F:DotNet.Safe.Logging.Severity.Info">
+            <summary>
+            Log most events.
+            </summary>
+        </member>
+        <member name="F:DotNet.Safe.Logging.Severity.Trace">
+            <summary>
+            Log a full execution trace.
+            </summary>
+        </member>
+    </members>
+</doc>
