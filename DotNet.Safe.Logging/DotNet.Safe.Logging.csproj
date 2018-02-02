@@ -1,22 +1,11 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <PackageId>DotNet.Safe.Logging</PackageId>
-    <PackageVersion>1.1.0</PackageVersion>
-    <Description>DotNet.Safe plugin to allow logging on function compositions.</Description>
-    <Authors>carlubian</Authors>
-    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <PackageReleaseNotes>First release</PackageReleaseNotes>
-    <PackageTags>exceptions standard composition dotnet-safe dotnet-safe-plugin</PackageTags>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>DotNet.Safe.Logging.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="DotNet.Safe.Standard" Version="1.1.0" />
+    <PackageReference Include="DotNet.Safe.Standard" Version="2.1.2" />
   </ItemGroup>
 
 </Project>

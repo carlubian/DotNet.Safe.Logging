@@ -7,8 +7,8 @@ namespace DotNet.Safe.Logging
     /// </summary>
     public class ConsoleLog : Log
     {
-        private Severity _s;
-        private ConsoleColor _default;
+        private readonly Severity _s;
+        private readonly ConsoleColor _default;
 
         /// <summary>
         /// Create a log to the console with a severity level.
@@ -42,6 +42,9 @@ namespace DotNet.Safe.Logging
                         break;
                     case Severity.Trace:
                         Console.ForegroundColor = ConsoleColor.DarkCyan;
+                        break;
+                    default:
+                        Console.ForegroundColor = _default;
                         break;
                 }
 

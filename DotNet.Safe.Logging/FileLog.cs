@@ -9,8 +9,8 @@ namespace DotNet.Safe.Logging
     /// </summary>
     public class FileLog : Log
     {
-        private string _uri;
-        private Severity _s;
+        private readonly string _uri;
+        private readonly Severity _s;
 
         /// <summary>
         /// Create a log to the specified file with a severity level.
@@ -32,8 +32,10 @@ namespace DotNet.Safe.Logging
         {
             if (severity <= _s)
             {
-                using(StreamWriter sw = new StreamWriter(new FileStream(_uri, FileMode.Append)))
+                using (StreamWriter sw = new StreamWriter(new FileStream(_uri, FileMode.Append)))
+                {
                     sw.WriteLine($"[{DateTime.Now.ToString("dd-MMM-yyyy HH:mm:ss:ff", CultureInfo.InvariantCulture)}] {text}");
+                }
             }
         }
     }

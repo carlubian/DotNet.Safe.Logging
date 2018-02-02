@@ -1,4 +1,11 @@
-# DotNet.Safe.Logging
+[![Build Status](https://travis-ci.org/carlubian/DotNet.Safe.Logging.svg?branch=master)](https://travis-ci.org/carlubian/DotNet.Safe.Logging)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/96fb0afa7a514420bc817fcc824e57d3)](https://www.codacy.com/app/carlubian/DotNet.Safe.Logging?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=carlubian/DotNet.Safe.Logging&amp;utm_campaign=Badge_Grade)
+[![NuGet](https://img.shields.io/nuget/v/DotNet.Safe.Logging.svg)](https://www.nuget.org/packages/DotNet.Safe.Logging/)
+[![NuGet](https://img.shields.io/nuget/dt/DotNet.Safe.Logging.svg)](https://www.nuget.org/packages/DotNet.Safe.Logging/)
+<hr/>
+
+![DotNet.Safe](https://carlubian.azurewebsites.net/images/DotNetSafe.png?maxAge=2592000 "DotNet.Safe")
+# Logging
 ## Get to know what's happening
 
 DotNet.Safe.Logging is a plugin for DotNet.Safe.Standard that allows logging inside compositions.
